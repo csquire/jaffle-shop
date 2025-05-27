@@ -14,11 +14,31 @@ sources:
       - name: raw_orders
         description: One record per order (consisting of one or more order items)
         loaded_at_field: ordered_at
+        freshness:
+          warn_after:
+            count: 1
+            period: day
       - name: raw_items
         description: Items included in an order
+        freshness:
+          warn_after:
+            count: 1
+            period: day
       - name: raw_stores
         loaded_at_field: opened_at
+        freshness:
+          warn_after:
+            count: 1
+            period: day
       - name: raw_products
         description: One record per SKU for items sold in stores
+        freshness:
+          warn_after:
+            count: 1
+            period: day
       - name: raw_supplies
         description: One record per supply per SKU of items sold in stores
+        freshness:
+          warn_after:
+            count: 1
+            period: day
