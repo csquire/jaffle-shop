@@ -7,6 +7,10 @@ sources:
     tables:
       - name: raw_customers
         description: One record per person who has purchased one or more items
+        freshness:
+          warn_after:
+            count: 1
+            period: day
       - name: raw_orders
         description: One record per order (consisting of one or more order items)
         loaded_at_field: ordered_at
